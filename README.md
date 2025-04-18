@@ -1,24 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Jafan - Licznik Fanów Sii
 
-## Getting Started
+Aplikacja webowa do zliczania fanów Sii, zbudowana przy użyciu Next.js i Supabase.
 
-First, run the development server:
+## Funkcje
 
+- Interaktywny przycisk z logo Sii
+- Globalny licznik kliknięć
+- Animacje i efekty wizualne
+- Zabezpieczenia API (rate limiting)
+- Responsywny design
+
+## Technologie
+
+- [Next.js](https://nextjs.org/) - Framework React
+- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS
+- [Supabase](https://supabase.com/) - Backend i baza danych
+- [Vercel](https://vercel.com/) - Hosting
+
+## Konfiguracja
+
+1. Sklonuj repozytorium:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/twoja-nazwa/jafan.git
+cd jafan
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Zainstaluj zależności:
+```bash
+npm install
+# lub
+yarn install
+```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. Skopiuj plik `.env.example` do `.env.local` i uzupełnij zmienne środowiskowe:
+```bash
+NEXT_PUBLIC_SUPABASE_URL=twoj_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=twoj_klucz
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Uruchom serwer deweloperski:
+```bash
+npm run dev
+# lub
+yarn dev
+```
+
+5. Otwórz [http://localhost:3000](http://localhost:3000) w przeglądarce.
+
+## Struktura projektu
+
+```
+jafan/
+├── app/                # Główny kod aplikacji
+│   ├── api/           # Endpointy API
+│   ├── page.js        # Strona główna
+│   └── globals.css    # Globalne style
+├── utils/             # Konfiguracja Supabase
+├── public/            # Statyczne assety
+└── middleware.js      # Middleware (rate limiting)
+```
+
+## Zabezpieczenia
+
+- Rate limiting: 5 żądań na minutę na użytkownika
+- Weryfikacja referer
+- Bezpieczne przechowywanie danych w Supabase
+
+## Licencja
+
+MIT
 
 ## Learn More
 
